@@ -1,5 +1,6 @@
 package fr.mrcubee.su;
 
+import fr.mrcubee.su.listeners.BlockBreakListener;
 import org.bukkit.Material;
 import org.bukkit.inventory.FurnaceRecipe;
 import org.bukkit.inventory.ItemStack;
@@ -13,5 +14,6 @@ public class SurvieUtilities extends JavaPlugin {
         final FurnaceRecipe rottenFleshRecipe = new FurnaceRecipe(new ItemStack(Material.PORKCHOP), new MaterialData(Material.ROTTEN_FLESH), 0.0f);
 
         getServer().addRecipe(rottenFleshRecipe);
+        getServer().getPluginManager().registerEvents(new BlockBreakListener(), this);
     }
 }
